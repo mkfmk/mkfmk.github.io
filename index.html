@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <!-- Wrapper -->
-    <div id="wrapper">
+---
+layout: default
+---
 
-        <!-- Header -->
-        <header id="header">
-            <h1><a href="index.html"><strong>Your Header Title</strong> Subtitle</a></h1>
-        </header>
+<!-- Wrapper -->
+<div id="wrapper">
 
-        <!-- Main -->
-        <div id="main">
-            <!-- Sample content -->
-            <article class="thumb">
-                <a href="path_to_full_image.jpg" class="image">
-                    <img src="path_to_thumbnail.jpg" alt="" data-name="image_name.jpg">
-                </a>
-            </article>
-        </div>
+    <!-- Header -->
+    <header id="header">
+        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    </div>
-</body>
-</html>
+    <!-- Main -->
+    <div id="main" data-exif='{{ site.exif }}'>
+        {% for image in site.static_files %}
+        {% if image.path contains 'fulls' %}
+        <article class="thumb">
+            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
+                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
+                     data-name="{{ image.name }}"/></a>
+            <!--<h2></h2>
+            <p></p>-->
+        </article>
+        {% endif %}
+        {% endfor %}
+</div>
