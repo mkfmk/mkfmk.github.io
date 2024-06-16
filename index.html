@@ -1,31 +1,53 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>这里是一个网站</title>
+    <style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center; /* 文本水平居中 */
+        align-items: center; /* 文本垂直居中 */
+        text-align: center; /* 文本水平居中 */
+    }
+    body {
+        flex-direction: column; /* 垂直布局 */
+    }
+    #next-page-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #808080; /* 灰色背景 */
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 50%; /* 圆形按钮 */
+        width: 50px; /* 设定宽度 */
+        height: 50px; /* 设定高度 */
+        display: flex; /* 垂直和水平居中 */
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <h1>你好，阿璇</h1>
+    <p>我很想你</p>
+    <p>很高兴你来到这里</p>
+<button id="next-page-button">这里</button>
 
-<!-- Wrapper -->
-<div id="wrapper">
+<script>
+    const button = document.getElementById('next-page-button');
 
-    <!-- Header -->
-    <header id="header">
-        <h1><a href="index.html"><strong>{{ site.header.title }}</strong> {{ site.header.subtitle }}</a></h1>
-        <nav>
-            <ul>
-                <li><a href="#footer" class="icon fa-info-circle">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main -->
-    <div id="main" data-exif='{{ site.exif }}'>
-        {% for image in site.static_files %}
-        {% if image.path contains 'fulls' %}
-        <article class="thumb">
-            <a href="{{ site.baseurl }}{{ site.image_fulls_loc }}/{{ image.name }}" class="image">
-                <img src="{{ site.baseurl }}{{ site.image_thumbs_loc }}/{{ image.name }}" alt=""
-                     data-name="{{ image.name }}"/></a>
-            <!--<h2></h2>
-            <p></p>-->
-        </article>
-        {% endif %}
-        {% endfor %}
-</div>
+    button.addEventListener('click', () => {
+        // 页面跳转至下一个页面
+        window.location.href = 'nextpage.html';
+    });
+</script>
+</body>
+</html>
