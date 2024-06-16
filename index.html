@@ -1,49 +1,31 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>这里是一个网站</title>
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center; /* 文本水平居中 */
-            align-items: center; /* 文本垂直居中 */
-            text-align: center; /* 文本水平居中 */
-        }
-        body {
-            flex-direction: column; /* 垂直布局 */
-        }
-        #next-page-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-    </style>
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>你好，阿璇</h1>
-    <p>我很想你</p>
-    <p>很高兴你来到这里</p>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-    <button id="next-page-button">这里</button>
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html"><strong>Your Header Title</strong> Subtitle</a></h1>
+        </header>
 
-    <script>
-        const button = document.getElementById('next-page-button');
+        <!-- Main -->
+        <div id="main">
+            <!-- Sample content -->
+            <article class="thumb">
+                <a href="path_to_full_image.jpg" class="image">
+                    <img src="path_to_thumbnail.jpg" alt="" data-name="image_name.jpg">
+                </a>
+            </article>
+        </div>
 
-        button.addEventListener('click', () => {
-            // 页面跳转至下一个页面
-            window.location.href = 'nextpage.html';
-        });
-    </script>
+    </div>
 </body>
 </html>
